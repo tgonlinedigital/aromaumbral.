@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aroma Umbral | Decants & Perfumería</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&family=Cinzel:wght@400;600;700&family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            black: '#050505',
+                            dark: '#121212',
+                            gray: '#2A2A2A',
+                            light: '#E5E5E5',
+                            white: '#FFFFFF'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Cinzel"', 'serif'],
+                        sans: ['"Inter"', 'sans-serif'],
+                        logo: ['"Montserrat"', 'sans-serif'],
+                    },
+                    keyframes: {
+                        'fade-in-up': {
+                            '0%': { opacity: '0', transform: 'translateY(10px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    },
+                    animation: {
+                        'fade-in-up': 'fade-in-up 0.5s ease-out',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #050505;
+            color: #FFFFFF;
+        }
+        
+        .glass-effect {
+            background-color: rgba(5, 5, 5, 0.65);
+            backdrop-filter: saturate(180%) blur(25px);
+            -webkit-backdrop-filter: saturate(180%) blur(25px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .hover-underline-animation {
+            display: inline-block;
+            position: relative;
+        }
+        .hover-underline-animation::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 1px;
+            bottom: 0;
+            left: 0;
+            background-color: #FFFFFF;
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+        }
+        .hover-underline-animation:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased overflow-x-hidden selection:bg-white selection:text-black">
+
+    <!-- Header / Navbar -->
+    <header class="fixed w-full z-50 transition-all duration-300 glass-effect">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <img src="ima/image.png" alt="Aroma Umbral Logo" class="h-10 w-auto object-contain transition-transform duration-500 group-hover:scale-105 filter brightness-0 invert">
+                <span class="text-lg md:text-xl font-logo font-extrabold tracking-[0.1em] text-white">AROMA UMBRAL</span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <nav class="hidden md:flex space-x-8 items-center">
+                <a href="#inicio" class="text-[10px] uppercase tracking-[0.2em] text-gray-300 hover:text-white transition-colors hover-underline-animation">Inicio</a>
+                <a href="#productos" class="text-[10px] uppercase tracking-[0.2em] text-gray-300 hover:text-white transition-colors hover-underline-animation">Decants</a>
+                <a href="#nosotros" class="text-[10px] uppercase tracking-[0.2em] text-gray-300 hover:text-white transition-colors hover-underline-animation">¿Qué es un Decant?</a>
+                <a href="#contacto" class="px-5 py-2 bg-white text-black hover:bg-gray-200 transition-all duration-300 text-[10px] font-bold uppercase tracking-widest rounded-sm">
+                    Contacto
+                </a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-white focus:outline-none border border-white/20 p-2 rounded-sm backdrop-blur-md bg-white/5">
+                <i data-lucide="menu" class="w-5 h-5"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-black/95 backdrop-blur-xl border-b border-white/10 md:hidden flex flex-col p-8 space-y-6 shadow-2xl">
+            <a href="#inicio" class="text-center text-white font-serif tracking-widest text-lg">Inicio</a>
+            <a href="#productos" class="text-center text-gray-400 hover:text-white tracking-widest">Decants</a>
+            <a href="#nosotros" class="text-center text-gray-400 hover:text-white tracking-widest">Info</a>
+            <a href="#contacto" class="text-center py-3 border border-white text-white uppercase tracking-widest text-sm">Contactar</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative h-screen flex items-center justify-center">
+        <!-- Background -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1557827983-012eb6ea8dc1?q=80&w=2076&auto=format&fit=crop" alt="Abstract Smoke Perfume" class="w-full h-full object-cover opacity-60 grayscale">
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/30 to-brand-black/70"></div>
+        </div>
+
+        <div class="relative z-10 container mx-auto px-6 text-center pt-20">
+            <h2 class="text-gray-300 uppercase tracking-[0.4em] text-[10px] md:text-xs mb-6 animate-fade-in-up border-b border-white/20 inline-block pb-2">Perfumería de Nicho & Diseño</h2>
+            <h1 class="font-logo text-5xl md:text-7xl lg:text-8xl font-extrabold text-white mb-6 leading-none tracking-tight">
+                LUJO <br/> <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-500">FRACCIONADO</span>
+            </h1>
+            <p class="text-gray-200 text-sm md:text-lg max-w-lg mx-auto mb-12 font-light tracking-wide leading-relaxed drop-shadow-lg">
+                Accedé a las fragancias más exclusivas del mundo en formato decant. Misma esencia, presentación inteligente.
+            </p>
+            <div class="flex flex-col md:flex-row gap-5 justify-center">
+                <a href="https://wa.me/5493782500549?text=Hola,%20quiero%20ver%20la%20lista%20de%20decants%20disponibles." target="_blank" class="bg-white text-black px-10 py-4 font-bold uppercase text-xs tracking-[0.2em] hover:bg-gray-200 transition-all duration-300 flex items-center justify-center gap-2 rounded-sm shadow-[0_0_20px_rgba(255,255,255,0.3)]">
+                    Pedir Lista <i data-lucide="list" class="w-4 h-4"></i>
+                </a>
+                <a href="#productos" class="backdrop-blur-md bg-white/10 border border-white/30 text-white px-10 py-4 font-bold uppercase text-xs tracking-[0.2em] hover:bg-white hover:text-black transition-all duration-300 rounded-sm">
+                    Ver Destacados
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="productos" class="py-24 bg-brand-black">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-between items-end mb-16 border-b border-white/10 pb-4">
+                <div>
+                    <span class="text-gray-500 uppercase tracking-[0.2em] text-xs font-bold block mb-2">Colección 2026</span>
+                    <h2 class="font-serif text-3xl md:text-4xl text-white">Nuevos Ingresos</h2>
+                </div>
+                <a href="#" class="hidden md:flex items-center gap-2 text-xs uppercase tracking-widest text-white hover:text-gray-400 transition-colors">
+                    Ver catálogo completo <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+
+            <!-- Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-0 border border-white/10 divide-y md:divide-y-0 md:divide-x divide-white/10">
+                
+                <!-- Product Card 1: Bozzsi -->
+                <div class="group relative bg-brand-black p-8 md:p-12 hover:bg-brand-dark transition-colors duration-500 flex flex-col">
+                    <div class="relative aspect-[3/4] mb-8 overflow-hidden bg-gray-900 w-full">
+                        <img src="ima/image2.png" alt="Only You Bozzsi Decant" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
+                        <div class="absolute top-0 left-0 bg-white text-black text-[10px] font-bold px-3 py-1 uppercase tracking-widest">35ml</div>
+                    </div>
+                    <div class="flex flex-col flex-1">
+                        <h3 class="font-serif text-2xl text-white mb-2">Only You Bozzsi</h3>
+                        <p class="text-gray-500 text-xs uppercase tracking-widest mb-4">Floral / Frutal / Fresco</p>
+                        <p class="text-gray-400 text-sm mb-8 line-clamp-2">Una fragancia versátil y encantadora. Notas de durazno y fresia que perduran todo el día. Ideal para uso diario.</p>
+                        <a href="https://wa.me/5493782500549?text=Hola,%20quisiera%20pedir%20el%20Only%20You%20Bozzsi%2035ml" target="_blank" class="mt-auto bg-white text-black px-6 py-3 font-bold uppercase text-xs tracking-widest hover:bg-gray-200 transition-colors w-full flex justify-center items-center gap-2 rounded-sm shadow-lg">
+                            <span>Hacer Pedido</span>
+                            <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product Card 2: 212 VIP Men -->
+                <div class="group relative bg-brand-black p-8 md:p-12 hover:bg-brand-dark transition-colors duration-500 flex flex-col">
+                    <div class="relative aspect-[3/4] mb-8 overflow-hidden bg-gray-900 w-full">
+                        <img src="ima/212vip.png" alt="212 VIP Men Decant" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
+                        <div class="absolute top-0 left-0 bg-gray-300 text-black text-[10px] font-bold px-3 py-1 uppercase tracking-widest">35ml</div>
+                    </div>
+                    <div class="flex flex-col flex-1">
+                        <h3 class="font-serif text-2xl text-white mb-2">212 VIP Men</h3>
+                        <p class="text-gray-500 text-xs uppercase tracking-widest mb-4">Vodka / Menta / Jengibre</p>
+                        <p class="text-gray-400 text-sm mb-8 line-clamp-2">El icónico "Plateado". Una bomba nocturna con notas de lima caviar y vodka helado. No pasa desapercibido.</p>
+                        <a href="https://wa.me/5493782500549?text=Hola,%20quisiera%20pedir%20el%20212%20VIP%20Men%2035ml" target="_blank" class="mt-auto bg-white text-black px-6 py-3 font-bold uppercase text-xs tracking-widest hover:bg-gray-200 transition-colors w-full flex justify-center items-center gap-2 rounded-sm shadow-lg">
+                            <span>Hacer Pedido</span>
+                            <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product Card 3: Yara Azul  -->
+                <div class="group relative bg-brand-black p-8 md:p-12 hover:bg-brand-dark transition-colors duration-500 flex flex-col">
+                    <div class="relative aspect-[3/4] mb-8 overflow-hidden bg-gray-900 w-full">
+                        <img src="ima/yara.png" alt="Yara Azul Lattafa Decant" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
+                        <div class="absolute top-0 right-0 bg-blue-900 text-white text-[10px] font-bold px-3 py-1 uppercase tracking-widest">Árabe</div>
+                    </div>
+                    <div class="flex flex-col flex-1">
+                        <h3 class="font-serif text-2xl text-white mb-2">Yara Azul Lattafa</h3>
+                        <p class="text-gray-500 text-xs uppercase tracking-widest mb-4">Tropical / Dulce / Atalcado</p>
+                        <p class="text-gray-400 text-sm mb-8 line-clamp-2">La joya árabe en versión azul. Una explosión de frutas tropicales, orquídea y vainilla. Intensidad y estela garantizada.</p>
+                        <a href="https://wa.me/5493782500549?text=Hola,%20quisiera%20pedir%20el%20Yara%20Azul%20Lattafa%2035ml" target="_blank" class="mt-auto bg-white text-black px-6 py-3 font-bold uppercase text-xs tracking-widest hover:bg-gray-200 transition-colors w-full flex justify-center items-center gap-2 rounded-sm shadow-lg">
+                            <span>Hacer Pedido</span>
+                            <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="mt-12 text-center md:hidden">
+                <a href="#" class="inline-block border border-white text-white px-8 py-3 text-xs uppercase tracking-widest">Ver catálogo completo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About / What is a Decant Section -->
+    <section id="nosotros" class="py-24 bg-brand-dark relative border-t border-white/5">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center gap-16">
+                <!-- Branding -->
+                <div class="w-full md:w-1/2 flex justify-center items-center">
+                    <h3 class="font-logo text-4xl md:text-6xl font-extrabold text-white tracking-[0.15em] text-center leading-tight">
+                        AROMA<br/>UMBRAL
+                    </h3>
+                </div>
+                
+                <div class="w-full md:w-1/2">
+                    <span class="block w-12 h-0.5 bg-white mb-6"></span>
+                    <h2 class="font-serif text-4xl text-white mt-2 mb-6">¿Qué es un <br/><span class="italic font-light text-gray-400">Decant?</span></h2>
+                    <p class="text-gray-300 leading-relaxed mb-6 font-light text-lg">
+                        Un decant es el <strong>perfume original</strong> extraído del frasco madre y transferido a un atomizador de vidrio más pequeño (generalmente de 5ml o 10ml).
+                    </p>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-8">
+                        En <strong>Aroma Umbral</strong>, te permitimos acceder a fragancias de lujo sin pagar el costo de la botella completa. Fundada por <strong>Juan Esteban Martinez</strong> en <strong>Corrientes</strong>, garantizamos que cada gota es 100% auténtica.
+                    </p>
+                    
+                    <div class="flex flex-col space-y-4">
+                        <div class="flex items-center gap-4 group">
+                            <div class="p-2 border border-white/20 rounded-full group-hover:border-white transition-colors">
+                                <i data-lucide="droplet" class="text-white w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold uppercase tracking-widest text-xs">100% Original</h4>
+                                <p class="text-gray-500 text-[10px] uppercase tracking-wider">Nunca imitaciones</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 group">
+                            <div class="p-2 border border-white/20 rounded-full group-hover:border-white transition-colors">
+                                <i data-lucide="package" class="text-white w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold uppercase tracking-widest text-xs">Atomizadores de Vidrio</h4>
+                                <p class="text-gray-500 text-[10px] uppercase tracking-wider">Para preservar la calidad</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA Section -->
+    <section id="contacto" class="py-32 relative overflow-hidden bg-white text-black">
+        <div class="container mx-auto px-6 relative z-10 flex flex-col items-center text-center">
+            <i data-lucide="mail" class="w-12 h-12 mb-6 text-black"></i>
+            <h2 class="font-serif text-5xl md:text-6xl mb-6">Contáctanos</h2>
+            <p class="text-gray-600 text-lg mb-10 max-w-xl mx-auto">
+                ¿Buscas una fragancia en particular? Consultanos por stock y precios de envíos a todo el país.
+            </p>
+            <a href="https://wa.me/5493782500549?text=Hola,%20Aroma%20Umbral,%20tengo%20una%20consulta%20sobre%20decants." target="_blank" class="inline-flex items-center gap-3 bg-black text-white hover:bg-gray-800 px-12 py-5 font-bold text-xs uppercase tracking-[0.2em] transition-all transform hover:-translate-y-1 shadow-2xl rounded-sm">
+                Iniciar Chat
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-white/10 pt-20 pb-10">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-1 md:col-span-2">
+                    <span class="text-2xl font-logo font-extrabold tracking-widest text-white block mb-6">AROMA UMBRAL</span>
+                    <p class="text-gray-500 text-sm max-w-xs">
+                        Perfumería de vanguardia. <br> Corrientes, Argentina.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-white uppercase tracking-widest text-xs font-bold mb-6">Explorar</h4>
+                    <ul class="space-y-4 text-sm text-gray-500">
+                        <li><a href="#inicio" class="hover:text-white transition-colors">Inicio</a></li>
+                        <li><a href="#productos" class="hover:text-white transition-colors">Decants</a></li>
+                        <li><a href="#nosotros" class="hover:text-white transition-colors">Nosotros</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white uppercase tracking-widest text-xs font-bold mb-6">Social</h4>
+                    <div class="flex gap-4">
+                        <a href="https://instagram.com/aromass.umbral" target="_blank" class="w-10 h-10 border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-black transition-all rounded-sm">
+                            <i data-lucide="instagram" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-[10px] uppercase tracking-widest text-gray-600">
+                <div class="flex flex-col md:flex-row items-center gap-2 md:gap-4 text-center md:text-left">
+                    <p>&copy; 2026 Aroma Umbral. All rights reserved.</p>
+                    <span class="hidden md:block text-gray-800">|</span>
+                    <p>Sitio creado por <a href="https://instagram.com/tgonline.ar" target="_blank" class="hover:text-white transition-colors font-bold border-b border-transparent hover:border-white">TGonline</a></p>
+                </div>
+                <div class="mt-4 md:mt-0 space-x-6">
+                    <a href="#" class="hover:text-white transition-colors">Privacidad</a>
+                    <a href="#" class="hover:text-white transition-colors">Términos</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
